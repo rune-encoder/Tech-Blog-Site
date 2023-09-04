@@ -19,9 +19,10 @@ User.init(
     name: {
       type: DataTypes.STRING(25),
       allowNull: false,
+      unique: true,
     },
     password: {
-      type: DataTypes.STRING(25),
+      type: DataTypes.STRING(60),
       allowNull: false,
       validate: {
         len: [10, 20],
