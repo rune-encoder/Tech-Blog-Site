@@ -1,24 +1,24 @@
 const router = require("express").Router();
-const { User, Post, Comment } = require("../../models");
+const { User } = require("../../models");
 
-// *** DELETE LATER - TEST ROUTE
+// The `/api/users` endpoint
+
+// *** DELETE ROUTE LATER - TEST ROUTE.... FOR NOW ==================================
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findAll(
-        // {include: [{ model: Post }, { model: Comment }],}
-        );
+    const userData = await User.findAll();
     res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// User Sign Up Route
+// CREATE: User Sign-Up Route
 router.post("/", async (req, res) => {
   try {
     const validName = await User.findOne({ where: { name: req.body.name } });
 
-    // If username is taken, message is displayed prompting to choose another username.
+    // Check if username is taken, message is displayed prompting to choose another username.
     if (validName) {
       res
         .status(400)
@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// User Login Route
+// VALIDATE: User Sign-In/Login Route
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { name: req.body.name } });
@@ -64,5 +64,9 @@ router.post("/login", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// ***Future : Option to UPDATE Username
+
+// ***Future: Option to DELETE Username
 
 module.exports = router;
