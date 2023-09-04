@@ -38,8 +38,7 @@ Comment.belongsTo(Post, {
 });
 
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+  User,
+  Post,
+  Comment
 };
