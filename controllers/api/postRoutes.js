@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Display selected blog posts and comments on post's page.
+// Display selected blog post and comments on post's page.
 router.get("/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
