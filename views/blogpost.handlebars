@@ -1,17 +1,41 @@
-<div>
-
-<p>{{post.id}}</p>
-<p>{{post.title}}</p>
-<p>{{post.content}}</p>
-<p>{{post.user.name}}</p>
-<p>{{post.createdAt}}</p>
-
-{{#each post.comments as |comment| }}
-
-<p>{{comment.content}}</p>
-<p>{{comment.user.name}}</p>
-<p>{{comment.createdAt}}</p>
-
-{{/each}}
-
+<div class="mx-5 my-4 purple-frost">
+    <div class="title d-flex justify-content-between">
+        <h4 class="mt-2 px-5">{{post.title}}</h4>
+        <p class="mt-2 px-5">Posted by {{post.user.name}}</p>
+    </div>
+    <div class="frost">
+        <div class="m-5 p-4 over-frost">
+            <p>{{post.content}}</p>
+        </div>
+    </div>
 </div>
+
+
+<div class="hidden mx-5 my-2 d-frost">
+    <div class="frost">
+        <p class="title mt-2">Comments</p>
+        {{#each post.comments as |comment| }}
+
+        <div class=" mx-5 over-frost my-5">
+            <div class="comment">
+                <div class=" p-4">
+                    <p class="lead">{{comment.content}}</p>
+                    </br>
+                    <p>-{{comment.user.name}}, {{comment.createdAt}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+{{!-- {{comment.content}} --}}
+{{!-- {{comment.createdAt}} --}}
+{{!-- {{comment.user.name}} --}}
+
+{{!-- {{post.id}} --}}
+{{!-- {{post.title}} --}}
+{{!-- {{post.content}} --}}
+{{!-- {{post.user.name}} --}}
+{{!-- {{post.createdAt}} --}}

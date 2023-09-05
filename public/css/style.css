@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #fff;
+  --secondary: rgb(117, 82, 255);
+  --tertiary: rgb(34, 16, 56);
+  --dark: #261e1e;
+  --medium: #bfbfbf;
+  --light: #fff;
+}
+
+body {
+  background: rgb(50, 2, 27);
+  background: linear-gradient(
+    90deg,
+    rgba(50, 2, 27, 1) 0%,
+    rgb(29, 21, 62) 100%
+  );
+  color: var(--light);
+}
+
+.bg-hero {
+  background-image: url(../assets/hero.png),
+    linear-gradient(270deg, rgb(254, 7, 134) 0%, rgb(117, 82, 255) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
+.nav-box {
+  background-color: #040112;
+}
+
+nav,
+.title {
+  background: #232526;
+  background: linear-gradient(to right, #3c1622, #232526);
+
+  box-shadow: 0px 2px 16px 3px var(--tertiary);
+}
+
+nav a {
+  /*Text Style - Nav Individual Links*/
+  color: var(--medium);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-decoration: none;
+  /*Block Dimensions - Nav Individual Links*/
+  padding: 5px 10px;
+  margin: 10px 2px;
+  /*Display Position - Nav Individual Links*/
+  position: relative;
+  /*Mouse Hover Effect Transition - Nav Individual Links*/
+  transition: all 0.3s ease-out;
+}
+
+/*Mouse Hover Effect - Navigation Bar: Links*/
+nav a:hover {
+  /*Border - After Hover: Nav Links*/
+  border: 0.1px solid var(--medium);
+
+  /*Box Dimension - After Hover: Nav Links*/
+  margin: 0 0 0 12px;
+  /*Text Style - After Hover: Nav Links*/
+  color: var(--light);
+  text-shadow: 2px 2px 2px var(--dark);
+}
+
+.purple-frost {
+  /* https://10015.io/tools/css-background-pattern-generator */
+  background:
+  radial-gradient(50% 50% at 100% 0,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
+   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
+   #0000 96%),
+  radial-gradient(50% 50% at 0 100%,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
+   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
+   #0000 96%),
+  radial-gradient(50% 50%,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
+   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
+   #0000 96%),
+  radial-gradient(50% 50%,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
+   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
+   #0000 96%) 50px 50px;
+background-size: 100px 100px;
+background-color: #ae00ff;
+
+border-radius:5px;
+}
+
+.d-frost {
+    /* https://10015.io/tools/css-background-pattern-generator */
+    background:
+    radial-gradient(50% 50% at 100% 0,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
+     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
+     #0000 96%),
+    radial-gradient(50% 50% at 0 100%,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
+     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
+     #0000 96%),
+    radial-gradient(50% 50%,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
+     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
+     #0000 96%),
+    radial-gradient(50% 50%,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
+     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
+     #0000 96%) 57px 57px;
+background-size: 114px 114px;
+background-color: #63347a;
+
+
+border-radius:5px;
+
+
+  }
+
+.frost {
+  /* From https://css.glass */
+  background: linear-gradient(
+    90deg,
+    rgba(50, 2, 27, 0.515) 0%,
+    rgba(34, 26, 68, 0.451) 100%
+  );
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(38, 33, 33, 0.5);
+  border-radius:0 0 5px 5px;
+}
+
+.over-frost {
+    /* From https://css.glass */
+    background: linear-gradient(
+      90deg,
+      rgba(89, 41, 87, 0.515) 0%,
+      rgba(42, 40, 54, 0.451) 100%
+    );
+  
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(158, 22, 65, 0.558);
+    border-radius:5px;
+  }
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.hidden {
+    /* visibility: hidden; */
+}
