@@ -9,7 +9,11 @@ router.get("/", async (req, res) => {
     const postData = await Post.findAll({
       include: [{ model: User, attributes: ["name"] }],
     });
-    res.status(200).json(postData);
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    res.render("homepage", { posts });
+    // res.status(200).json(blogPosts);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -28,6 +32,12 @@ router.get("/blogpost/:id", async (req, res) => {
         },
       ],
     });
+
+    const post = postData.get({ plain: true });
+    console.log(postData);
+    console.log(post);
+
+    // res.render('blogpost', { post });
     res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
