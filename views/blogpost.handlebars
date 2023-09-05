@@ -9,7 +9,7 @@
 {{#each post.comments as |comment| }}
 
 <p>{{comment.content}}</p>
-<p>{{comment.user}}</p>
+<p>{{comment.user.name}}</p>
 <p>{{comment.createdAt}}</p>
 
 {{/each}}
