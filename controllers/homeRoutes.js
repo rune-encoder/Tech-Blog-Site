@@ -11,6 +11,7 @@ router.get("/", async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts);//*===============================================*
 
     res.render("homepage", { posts });
     // res.status(200).json(blogPosts);
@@ -34,11 +35,10 @@ router.get("/blogpost/:id", async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-    console.log(postData);
-    console.log(post);
+    console.log(post); //*===============================================*
 
-    // res.render('blogpost', { post });
-    res.status(200).json(postData);
+    res.render('blogpost', { post });
+    // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -52,7 +52,12 @@ router.get("/dashboard/:user", async (req, res) => {
         { model: User, attributes: ["name"], where: { name: req.params.user } },
       ],
     });
-    res.status(200).json(postData);
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts); //*===============================================*
+
+    res.render('dashboard', { posts });
+    // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
   }
