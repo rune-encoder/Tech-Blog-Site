@@ -3,25 +3,27 @@ const { User, Post, Comment } = require("../models");
 
 // The `/` endpoint
 
-// Display all blog posts on homepage.
+// HOME: Display all blog posts on homepage.
 router.get("/", async (req, res) => {
   try {
-    console.log(req.session.user_name)
+    console.log(req.session.user_name);
     const postData = await Post.findAll({
       include: [{ model: User, attributes: ["name"] }],
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);//*===============================================*
 
-    res.render("homepage", { posts, logged_in: req.session.logged_in, user_name: req.session.user_name });
-    // res.status(200).json(blogPosts);
+    res.render("homepage", {
+      posts,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Display selected blog post and comments on post's page.
+// BLOG POST: Display selected blog post and comments on post's page.
 router.get("/blogpost/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -36,16 +38,19 @@ router.get("/blogpost/:id", async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
-    console.log(post); //*===============================================*
 
-    res.render('blogpost', { post, logged_in: req.session.logged_in, user_id: req.session.user_id, user_name: req.session.user_name });
-    // res.status(200).json(postData);
+    res.render("blogpost", {
+      post,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+      user_name: req.session.user_name,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Display all of user's blog posts on the user's dashboard.
+// DASHBOARD: Display all of user's blog posts on the user's dashboard.
 router.get("/dashboard/:user", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -55,28 +60,30 @@ router.get("/dashboard/:user", async (req, res) => {
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts); //*===============================================*
 
-    res.render('dashboard', { posts, logged_in: req.session.logged_in, user_name: req.session.user_name });
-    // res.status(200).json(postData);
+    res.render("dashboard", {
+      posts,
+      logged_in: req.session.logged_in,
+      user_name: req.session.user_name,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Display login page.
+// LOGIN: Display login page.
 router.get("/login", async (req, res) => {
   try {
-    res.render('login', { logged_in: req.session.logged_in });
+    res.render("login", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Display Signup page.
+// SIGNUP: Display Signup page.
 router.get("/signup", async (req, res) => {
   try {
-    res.render('signup', { logged_in: req.session.logged_in });
+    res.render("signup", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }

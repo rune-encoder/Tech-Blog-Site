@@ -9,9 +9,6 @@ router.use('/', homeRoutes);
 // Send all the requests that begin with /api to the index.js in the api folder.
 router.use('/api', apiRoutes);
 
-// *** Will DELETE - To help with Insomnia checking routes
-// router.use((req, res) => {
-//     res.send("<h1>Wrong Route!</h1>")
-//   });
+// *** WILL ADD WILDCARD ROUTE LATER ===================================================*
 
 module.exports = router;

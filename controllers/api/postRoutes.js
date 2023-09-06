@@ -34,20 +34,20 @@ router.put("/:id", withAuth, async (req, res) => {
 
 // Deletes an existing blog post using its `id`.
 router.delete("/:id", withAuth, async (req, res) => {
-    try {
-      const postData = await Post.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      if (!postData) {
-        res.status(400).json({ message: "No Blog Post found with this ID." });
-        return;
-      }
-      res.status(200).json(postData);
-    } catch (err) {
-      res.status(500).json(err);
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!postData) {
+      res.status(400).json({ message: "No Blog Post found with this ID." });
+      return;
     }
-  });
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

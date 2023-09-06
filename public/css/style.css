@@ -159,3 +159,10 @@ textarea {
     resize: none;
 }
 
+#text-title {
+  height: 7px;
+}
+
+.hide {
+  display: none;
+}

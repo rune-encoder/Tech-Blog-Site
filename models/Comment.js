@@ -23,12 +23,12 @@ Comment.init(
       },
     },
     post_id: {
-        type: DataTypes.INTEGER,
-        reference: {
-          model: "post",
-          key: "id",
-        },
+      type: DataTypes.INTEGER,
+      reference: {
+        model: "post",
+        key: "id",
       },
+    },
   },
   {
     sequelize,
