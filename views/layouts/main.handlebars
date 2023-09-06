@@ -29,8 +29,8 @@
     <h1 class="display-3 text-start">Ultimate Tech Blog</h1>
     <p class="lead text-start px-3">By ᚱuᚢe Eᚢcᛟdeᚱ</p>
   </header>
-  <div class="nav-box py-2">
-    <nav class="text-start border border-dark px-3">
+  <div class="nav-box py-2 d-flex justify-content-between">
+    <nav class="px-3">
       <a href="/">Home</a>
       <a href="/dashboard">Dashboard</a>
       {{#if logged_in}}
@@ -39,6 +39,9 @@
       <a href="/login">Login</a>
       {{/if}}
     </nav>
+    {{#if logged_in}}
+        <p class="greeting px-5 mt-1">Welcome {{user_name}}</p>
+        {{/if}}
   </div>
 
   <main>
@@ -47,7 +50,7 @@
 
 </body>
 {{#if logged_in}}
-<script src="./js/logout.js"></script>
+<script src="/js/logout.js"></script>
 {{/if}}
 
 </html>

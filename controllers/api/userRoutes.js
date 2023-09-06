@@ -3,16 +3,6 @@ const { User } = require("../../models");
 
 // The `/api/users` endpoint
 
-// *** DELETE ROUTE LATER - TEST ROUTE.... FOR NOW ==================================
-router.get("/", async (req, res) => {
-  try {
-    const userData = await User.findAll();
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // CREATE: User Sign-Up Route
 router.post("/", async (req, res) => {
   try {
@@ -30,6 +20,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.user_name = userData.name;
       req.session.logged_in = true;
       res
         .status(200)
@@ -63,6 +54,7 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
+      req.session.user_name = userData.name;
       req.session.logged_in = true;
       res.json({ user: userData, message: "You are now logged in!" });
     });

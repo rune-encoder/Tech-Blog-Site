@@ -8,9 +8,16 @@
         <div class="m-5 p-4 over-frost">
             <p>{{post.content}}</p>
         </div>
+        <div class="m-5 p-4 over-frost comments">
+            <form class="comment-form">
+                <textarea id="comment" data-user="{{user_id}}" placeholder="Write a comment..."></textarea>
+                <button class="btn btn-primary mt-3" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
     </div>
 </div>
-
 
 <div class="hidden mx-5 my-2 d-frost">
     <div class="frost">
@@ -30,6 +37,8 @@
     </div>
 </div>
 
+<script src="/js/addComment.js"></script>
+
 {{else}}
 <!-- Main Background of card. -->
 <div class="mx-5 my-4 bg-frost">
@@ -46,6 +55,8 @@
     </div>
 </div>
 {{/if}}
+
+
 
 {{!-- {{comment.content}} --}}
 {{!-- {{comment.createdAt}} --}}

@@ -6,6 +6,7 @@ const { User, Post, Comment } = require("../models");
 // Display all blog posts on homepage.
 router.get("/", async (req, res) => {
   try {
+    console.log(req.session.user_name)
     const postData = await Post.findAll({
       include: [{ model: User, attributes: ["name"] }],
     });
@@ -13,7 +14,7 @@ router.get("/", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts);//*===============================================*
 
-    res.render("homepage", { posts, logged_in: req.session.logged_in });
+    res.render("homepage", { posts, logged_in: req.session.logged_in, user_name: req.session.user_name });
     // res.status(200).json(blogPosts);
   } catch (err) {
     res.status(500).json(err);
@@ -37,7 +38,7 @@ router.get("/blogpost/:id", async (req, res) => {
     const post = postData.get({ plain: true });
     console.log(post); //*===============================================*
 
-    res.render('blogpost', { post, logged_in: req.session.logged_in });
+    res.render('blogpost', { post, logged_in: req.session.logged_in, user_id: req.session.user_id, user_name: req.session.user_name });
     // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
@@ -56,7 +57,7 @@ router.get("/dashboard/:user", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts); //*===============================================*
 
-    res.render('dashboard', { posts, logged_in: req.session.logged_in });
+    res.render('dashboard', { posts, logged_in: req.session.logged_in, user_name: req.session.user_name });
     // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
