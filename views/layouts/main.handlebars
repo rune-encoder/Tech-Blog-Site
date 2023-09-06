@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,8 +33,11 @@
     <nav class="text-start border border-dark px-3">
       <a href="/">Home</a>
       <a href="/dashboard">Dashboard</a>
+      {{#if logged_in}}
+      <a id="logout">Logout</a>
+      {{else}}
       <a href="/login">Login</a>
-      <a href="/logout">Logout</a>
+      {{/if}}
     </nav>
   </div>
 
@@ -42,5 +46,8 @@
   </main>
 
 </body>
+{{#if logged_in}}
+<script src="./js/logout.js"></script>
+{{/if}}
 
 </html>

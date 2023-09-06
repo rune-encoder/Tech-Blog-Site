@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts);//*===============================================*
 
-    res.render("homepage", { posts });
+    res.render("homepage", { posts, logged_in: req.session.logged_in });
     // res.status(200).json(blogPosts);
   } catch (err) {
     res.status(500).json(err);
@@ -37,7 +37,7 @@ router.get("/blogpost/:id", async (req, res) => {
     const post = postData.get({ plain: true });
     console.log(post); //*===============================================*
 
-    res.render('blogpost', { post });
+    res.render('blogpost', { post, logged_in: req.session.logged_in });
     // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
@@ -56,7 +56,7 @@ router.get("/dashboard/:user", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts); //*===============================================*
 
-    res.render('dashboard', { posts });
+    res.render('dashboard', { posts, logged_in: req.session.logged_in });
     // res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);
@@ -66,7 +66,7 @@ router.get("/dashboard/:user", async (req, res) => {
 // Display login page.
 router.get("/login", async (req, res) => {
   try {
-    res.render('login');
+    res.render('login', { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -75,7 +75,7 @@ router.get("/login", async (req, res) => {
 // Display Signup page.
 router.get("/signup", async (req, res) => {
   try {
-    res.render('signup');
+    res.render('signup', { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }

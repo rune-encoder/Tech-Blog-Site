@@ -28,9 +28,13 @@ router.post("/", async (req, res) => {
 
     const userData = await User.create(req.body);
 
-    // Session Storage Placeholder
-
-    res.status(200).json({ user: userData, message: "Successfully created account!" });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res
+        .status(200)
+        .json({ user: userData, message: "Successfully created account!" });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -57,16 +61,18 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    // Session Storage Placeholder
-
-    res.json({ user: userData, message: "You are now logged in!" });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 // User Logout Route
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();

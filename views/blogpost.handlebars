@@ -1,3 +1,4 @@
+{{#if logged_in}}
 <div class="mx-5 my-4 bg-frost">
     <div class="title d-flex justify-content-between">
         <h4 class="mt-2 px-5">{{post.title}}</h4>
@@ -29,6 +30,22 @@
     </div>
 </div>
 
+{{else}}
+<!-- Main Background of card. -->
+<div class="mx-5 my-4 bg-frost">
+    <!-- Card Header -->
+    <div class="title d-flex">
+        <h4 class="mt-2 px-5">Content Locked</h4>
+    </div>
+    <!-- Background Glass Overlay-->
+    <div class="text-center frost">
+        <!-- Overhead Glass Overlay -->
+        <div class="m-5 p-4 over-frost">
+            <h3>Must be logged in to view content</h3>
+        </div>
+    </div>
+</div>
+{{/if}}
 
 {{!-- {{comment.content}} --}}
 {{!-- {{comment.createdAt}} --}}

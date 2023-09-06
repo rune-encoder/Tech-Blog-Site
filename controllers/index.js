@@ -10,8 +10,8 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
 // *** Will DELETE - To help with Insomnia checking routes
-router.use((req, res) => {
-    res.send("<h1>Wrong Route!</h1>")
-  });
+// router.use((req, res) => {
+//     res.send("<h1>Wrong Route!</h1>")
+//   });
 
 module.exports = router;

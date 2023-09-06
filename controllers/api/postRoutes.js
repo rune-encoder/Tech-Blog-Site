@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // The `/api/posts` endpoint
 
 // Creates a new blog post.
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.create(req.body);
     res.status(200).json(postData);
@@ -14,7 +15,7 @@ router.post("/", async (req, res) => {
 });
 
 // Updates an existing blog post using its `id`.
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.update(req.body, {
       where: {
@@ -32,7 +33,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Deletes an existing blog post using its `id`.
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
     try {
       const postData = await Post.destroy({
         where: {
