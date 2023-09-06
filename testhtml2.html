@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- {{! Bootstrap CSS CDN Link }} -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <!-- {{! Google Fonts }} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
+        rel="stylesheet" />
+
+    <!-- {{! Custom CSS Link }} -->
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <title>Ultimate Tech Blog</title>
+</head>
+
+<body>
+    <header class="bg-hero p-4">
+        <h1 class="display-3 text-start">Ultimate Tech Blog</h1>
+        <p class="lead text-start px-3">By ᚱuᚢe Eᚢcᛟdeᚱ</p>
+    </header>
+    <div class="nav-box py-2">
+        <nav class="text-start border border-dark px-3">
+            <a href="#">Home</a>
+            <a href="#">Dashboard</a>
+            <a href="#">Login</a>
+            <a href="#">Logout</a>
+        </nav>
+    </div>
+
+
+    <!-- Main Background of card. -->
+    <div class="mx-5 my-4 bg-frost">
+        <!-- Card Header -->
+        <div class="title d-flex">
+            <h4 class="mt-2 px-5">Login</h4>
+        </div>
+        <!-- Background Glass Overlay-->
+        <div class="text-center frost">
+            <!-- Overhead Glass Overlay -->
+            <div class="m-5 p-4 over-frost">
+                <!-- Login Form  -->
+                <form class="form login-form py-3">
+                    <div class="form-group d-flex flex-column align-items-center">
+                        <div class="d-flex flex-column text-start w-50">
+                            <!-- Enter Username -->
+                            <label for="user-login">Username:</label>
+                            <input class="form-input" type="text" id="user-login" />
+                            <!-- Enter Password -->
+                            <label class="mt-3" for="password-login">Password:</label>
+
+                            <input class="form-input" type="password" id="password-login" />
+                            <!-- Button to Login -->
+                            <button class="btn btn-primary mt-3" type="submit">
+                                Login
+                            </button>
+                            <a class="mt-2" href="#">Sign up instead!</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Background of card. -->
+    <div class="mx-5 my-4 bg-frost">
+        <!-- Card Header -->
+        <div class="title d-flex">
+            <h4 class="mt-2 px-5">Signup</h4>
+        </div>
+        <!-- Background Glass Overlay-->
+        <div class="text-center frost">
+            <!-- Overhead Glass Overlay -->
+            <div class="m-5 p-4 over-frost">
+                <!-- Login Form  -->
+                <form class="form signup-form py-3">
+                    <div class="form-group d-flex flex-column align-items-center">
+                        <div class="d-flex flex-column text-start w-50">
+                            <!-- Enter Username -->
+                            <label for="name-signup">Username:</label>
+                            <input class="form-input" type="text" id="name-signup" />
+                            <!-- Enter Password -->
+                            <label class="mt-3" for="password-signup">Password:</label>
+
+                            <input class="form-input" type="password" id="password-signup" />
+                            <!-- Button to Login -->
+                            <button class="btn btn-primary mt-3" type="submit">
+                                Signup
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="./js/login.js"></script>
+
+</html>
