@@ -1,10 +1,21 @@
-<div>
+<!-- Main Background of card. -->
+<div class="mx-5 my-4 bg-frost">
+    <div class="title d-flex">
+        <h4 class="mt-2 px-5">{{user_name}}'s' Dashboard</h4>
+    </div>
+    <!-- Background Glass Overlay-->
+    <div class="text-center frost d-flex flex-column align-items-center">
 
-{{#each posts as |post| }}
-<p>{{post.id}}</p>
-<p>{{post.title}}</p>
-<p>{{post.content}}</p>
-<p>{{post.createdAt}}</p>
-{{/each}}
-
+        {{#each posts as |post| }}
+        <button id="{{post.id}}" class="btn btn-primary w-75 my-3 d-flex justify-content-between">
+            <span class="px-5">{{post.title}}</span>
+            <span class="px-5">{{post.createdAt}}</span>
+        </button>
+        {{/each}}
+    </div>
 </div>
+
+{{!-- {{post.id}}
+{{post.title}}
+{{post.content}}
+{{post.createdAt}} --}}

@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    <!-- ============================================HERO AND NAV====================================== -->
     <header class="bg-hero p-4">
         <h1 class="display-3 text-start">Ultimate Tech Blog</h1>
         <p class="lead text-start px-3">By ᚱuᚢe Eᚢcᛟdeᚱ</p>
@@ -38,8 +39,64 @@
         <p class="greeting px-5">Welcome </p>
     </div>
 
-    <!-- =============================================Posts Page====================================== -->
+    <!-- =============================================Dashboard====================================== -->
+
+
     <!-- Main Background of card. -->
+    <div class="mx-5 my-4 bg-frost">
+        <div class="title d-flex">
+            <h4 class="mt-2 px-5">Your Dashboard</h4>
+        </div>
+        <!-- Background Glass Overlay-->
+        <div class="text-center frost d-flex flex-column align-items-center">
+
+            <button class="btn btn-primary w-75 my-3 d-flex justify-content-between">
+                <span class="px-5">asdf</span>
+                <span class="px-5">tersdrf</span>
+            </button>
+
+            <button class="btn btn-primary w-75 my-3 d-flex justify-content-between">
+                <span class="px-5">asdf</span>
+                <span class="px-5">tersdrf</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Background of card. -->
+    <div class="mx-5 my-4 bg-frost">
+        <div class="title d-flex">
+            <h4 class="mt-2 px-5">Create New Post</h4>
+        </div>
+        <!-- Background Glass Overlay-->
+        <div class="text-center frost d-flex justify-content-center">
+            <!-- Overhead Glass Overlay -->
+            <div class="m-5 p-4 over-frost w-75">
+                <!-- Login Form  -->
+                <form class="form create-post py-3">
+                    <div class="form-group d-flex flex-column align-items-center">
+                        <div class="d-flex flex-column text-start w-75">
+
+                            <!-- Post Title -->
+                            <label for="post-title">Title:</label>
+
+                            <input class="form-input" type="text" id="post-title" />
+                            <!-- Post Content -->
+
+                            <label class="mt-3" for="post-content">Content:</label>
+
+                            <textarea class="form-input" id="post-content"></textarea>
+                            <!-- Button to Create Post -->
+                            <button class="btn btn-primary mt-3" type="submit">
+                                Create
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============================================Posts Page====================================== -->
     <div class="mx-5 my-4 bg-frost">
         <!-- Card Header -->
         <div class="title d-flex justify-content-between">
@@ -64,7 +121,7 @@
     </div>
 
 
-    <div class="hidden mx-5 my-2 d-frost">
+    <div class="mx-5 my-2 d-frost">
         <div class="frost">
             <p class="title mt-2">Comments</p>
             <div class=" mx-5 over-frost my-5">

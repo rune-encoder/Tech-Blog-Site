@@ -32,16 +32,17 @@
   <div class="nav-box py-2 d-flex justify-content-between">
     <nav class="px-3">
       <a href="/">Home</a>
-      <a href="/dashboard">Dashboard</a>
       {{#if logged_in}}
+      <a href="/dashboard/{{user_name}}">Dashboard</a>
       <a id="logout">Logout</a>
       {{else}}
+      <a>Dashboard</a>
       <a href="/login">Login</a>
       {{/if}}
     </nav>
     {{#if logged_in}}
-        <p class="greeting px-5 mt-1">Welcome {{user_name}}</p>
-        {{/if}}
+    <p class="greeting px-5 mt-1">Welcome {{user_name}}</p>
+    {{/if}}
   </div>
 
   <main>
