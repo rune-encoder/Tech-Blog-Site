@@ -1,6 +1,9 @@
 // Import node.js path module provides utilities for working with file and directory paths.
 const path = require('path');
 
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // Imports Express.js.
 const express = require('express');
 
@@ -36,3 +39,22 @@ app.use(routes)
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening!'));
 });
+
+
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));

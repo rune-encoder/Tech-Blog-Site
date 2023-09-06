@@ -71,7 +71,7 @@ nav a:hover {
   text-shadow: 2px 2px 2px var(--dark);
 }
 
-.purple-frost {
+.bg-frost {
   /* https://10015.io/tools/css-background-pattern-generator */
   background:
   radial-gradient(50% 50% at 100% 0,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
