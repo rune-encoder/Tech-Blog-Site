@@ -36,7 +36,7 @@ body {
   background-color: #040112;
 }
 
-nav,
+.nav-box,
 .title {
   background: #232526;
   background: linear-gradient(to right, #3c1622, #232526);
@@ -44,7 +44,8 @@ nav,
   box-shadow: 0px 2px 16px 3px var(--tertiary);
 }
 
-nav a {
+nav a,
+a {
   /*Text Style - Nav Individual Links*/
   color: var(--medium);
   font-size: 1.2rem;
@@ -158,6 +159,3 @@ textarea {
     resize: none;
 }
 
-.hidden {
-    /* visibility: hidden; */
-}
