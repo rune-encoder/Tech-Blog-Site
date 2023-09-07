@@ -90,6 +90,10 @@ nav a:hover {
 background-size: 100px 100px;
 background-color: #ae00ff;
 
+/* max-width: 750px; */
+margin-left: auto;
+margin-right: auto;
+
 border-radius:5px;
 }
 
@@ -111,6 +115,7 @@ border-radius:5px;
 background-size: 114px 114px;
 background-color: #63347a;
 
+/* max-width: 750px; */
 
 border-radius:5px;
 
