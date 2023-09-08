@@ -5,8 +5,8 @@
 }
 
 :root {
-  --primary: #4b142f;
-  --secondary: rgb(33, 19, 58);
+  --primary: #241546;
+  --secondary: rgb(94, 14, 67);
   --tertiary: rgb(105, 20, 209);
   --i-text: rgb(27, 211, 211);
   --dark: #000000;
@@ -19,6 +19,7 @@ body {
   background: rgb(50, 2, 27);
   background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--light);
+  font-family: "Roboto", sans-serif;
 }
 
 /* Background hero image settings */
@@ -29,6 +30,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: multiply;
+  font-family: "Ysabeau SC", sans-serif;
 }
 
 /* Remove styling and set color for links */
@@ -58,6 +60,7 @@ time {
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid var(--medium-dark);
   border-radius: 15px;
+  box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.75);
 }
 
 /* Removes styling from buttons */
@@ -83,6 +86,8 @@ time {
   color: var(--dark);
   background-color: var(--light);
   border: 1px solid var(--medium-dark);
+  border-radius: 15px;
+  box-shadow: 3px 3px 14px 0px rgba(0,0,0,0.75);
 }
 
 .card-signin a {
@@ -101,6 +106,7 @@ time {
   cursor: pointer;
   transition: all 0.2s ease-in;
   outline: 0.1px solid;
+  outline-color: var(--medium-dark);
   background-color: var(--dark);
 }
 
@@ -132,62 +138,66 @@ time {
   color: var(--medium-dark);
 }
 
-/* --------------------------------------------------------------------------------- */
-
-.nav-box {
-  background-color: var(--tertiary);
+.max-size {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
 }
 
 .nav-box,
-.title {
+.foot-box {
   background: #232526;
-  background: linear-gradient(to right, #3c1622, #232526);
-
-  /* box-shadow: 0px 2px 16px 3px var(--tertiary); */
+  background: linear-gradient(to right, rgb(20, 20, 20), var(--medium-dark));
+  font-family: "Ysabeau Infant", sans-serif;
 }
 
+.nav-box {
+  box-shadow: -1px 7px 13px -1px var(--dark);
+}
+
+.foot-box {
+  box-shadow: 0px -2px 23px 0px rgba(0,0,0,0.75);
+}
+
+/* Style for navigation links */
 nav a {
-  /*Text Style - Nav Individual Links*/
+  color: var(--medium);
   font-size: 1.2rem;
   line-height: 1.8;
-  /*Block Dimensions - Nav Individual Links*/
   padding: 5px 10px;
   margin: 10px 2px;
-  /*Display Position - Nav Individual Links*/
   position: relative;
-  /*Mouse Hover Effect Transition - Nav Individual Links*/
   transition: all 0.3s ease-out;
 }
 
-/*Mouse Hover Effect - Navigation Bar: Links*/
 nav a:hover {
-  /*Border - After Hover: Nav Links*/
+  color: var(--light);
   border: 0.1px solid var(--medium);
-
-  /*Box Dimension - After Hover: Nav Links*/
   margin: 0 0 0 12px;
-  /*Text Style - After Hover: Nav Links*/
   color: var(--light);
   text-shadow: 2px 2px 2px var(--dark);
 }
 
+/* Style for our text areas and input elements */
+input {
+  padding: 10px;
+}
 
 textarea {
   width: 100%;
   height: 80px;
   padding: 12px 20px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
+  border: 2px solid var(--medium-dark);
   border-radius: 4px;
-  background-color: #f8f8f8;
+  background-color: var(--light);
   font-size: 16px;
   resize: none;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
 }
 
-#text-title {
-  height: 7px;
-}
-
+/* Dynamically hide and show edit post, create post, create comment */
 .hide {
   display: none;
 }

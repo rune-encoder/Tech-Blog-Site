@@ -1,14 +1,14 @@
 [
   {
-    "name": "Rune",
-    "password": "password12345"
+    "name": "Sun",
+    "password": "2b$10$BoI.WlvvnJthY7S/26YzcOpVfVdADOlGofltfnrSpr5ttV/pc2XrW"
   },
   {
     "name": "Moon",
-    "password": "password12345"
+    "password": "2b$10$BoI.WlvvnJthY7S/26YzcOpVfVdADOlGofltfnrSpr5ttV/pc2XrW"
   },
   {
-    "name": "Odin",
-    "password": "password12345"
+    "name": "Planet",
+    "password": "2b$10$BoI.WlvvnJthY7S/26YzcOpVfVdADOlGofltfnrSpr5ttV/pc2XrW"
   }
 ]

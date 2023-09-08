@@ -1,17 +1,17 @@
 [
   {
-    "title": "Test Title",
-    "content": "Test Content",
+    "title": "Greetings All!",
+    "content": "Hello everyone! Im exited to have joined this blog site. Lets all get along well with eachother!",
     "user_id": 1
   },
   {
-    "title": "Test Title",
-    "content": "Test Content",
+    "title": "Game Changing Technologies",
+    "content": "Tabnine's is a game-changer! It helps developers tremendously, making their code more robust and maintainable.",
     "user_id": 2
   },
   {
-    "title": "Test Title",
-    "content": "Test Content",
+    "title": "True or False?",
+    "content": "Is it true that you can jailbreak ChatGPT? Asking for a friend... ",
     "user_id": 3
   }
 ]
