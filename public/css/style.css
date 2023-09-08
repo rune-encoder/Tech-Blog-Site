@@ -5,35 +5,92 @@
 }
 
 :root {
-  --primary: #fff;
-  --secondary: rgb(117, 82, 255);
-  --tertiary: rgb(34, 16, 56);
-  --dark: #261e1e;
+  --primary: #4b142f;
+  --secondary: rgb(33, 19, 58);
+  --tertiary: rgb(105, 20, 209);
+  --i-text: rgb(0, 145, 145);
+  --dark: #000000;
+  --medium-dark: rgb(37, 37, 37);
   --medium: #bfbfbf;
   --light: #fff;
 }
 
 body {
   background: rgb(50, 2, 27);
-  background: linear-gradient(
-    90deg,
-    rgba(50, 2, 27, 1) 0%,
-    rgb(29, 21, 62) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--primary) 0%,
+      var(--secondary) 100%);
   color: var(--light);
 }
 
+/* Background hero image settings */
 .bg-hero {
   background-image: url(../assets/hero.png),
-    linear-gradient(270deg, rgb(254, 7, 134) 0%, rgb(117, 82, 255) 100%);
+    linear-gradient(270deg, rgb(255, 0, 157) 0%, rgb(41, 21, 73) 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: multiply;
 }
 
+/* Remove styling and set color for links */
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+
+/* Set color as medium for content and time */
+p,
+time {
+  color: var(--medium);
+}
+
+/* Glass background effect for posts */
+.frost {
+  /* From https://css.glass */
+  background: linear-gradient(90deg,
+      rgba(8, 0, 4, 0.822) 0%,
+      rgba(0, 0, 0, 0.363) 100%);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--medium-dark);
+  border-radius: 15px;
+}
+
+/* Removes styling from buttons */
+.btn-clear {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Styling for Blog Post View page */
+.bg-blogpost {
+  background-color: var(--dark);
+  border: 1px solid var(--medium-dark);
+  border-radius: 15px;
+}
+
+.card-signin {
+  color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid var(--medium-dark);
+}
+
+.card-signin a {
+  color: var(--i-text);
+}
+
+/* --------------------------------------------------------------------------------- */
+
 .nav-box {
-  background-color: #040112;
+  background-color: var(--tertiary);
 }
 
 .nav-box,
@@ -41,16 +98,13 @@ body {
   background: #232526;
   background: linear-gradient(to right, #3c1622, #232526);
 
-  box-shadow: 0px 2px 16px 3px var(--tertiary);
+  /* box-shadow: 0px 2px 16px 3px var(--tertiary); */
 }
 
-nav a,
-a {
+nav a {
   /*Text Style - Nav Individual Links*/
-  color: var(--medium);
   font-size: 1.2rem;
   line-height: 1.8;
-  text-decoration: none;
   /*Block Dimensions - Nav Individual Links*/
   padding: 5px 10px;
   margin: 10px 2px;
@@ -72,96 +126,67 @@ nav a:hover {
   text-shadow: 2px 2px 2px var(--dark);
 }
 
-.bg-frost {
+.bg-home-frost {
   /* https://10015.io/tools/css-background-pattern-generator */
-  background:
-  radial-gradient(50% 50% at 100% 0,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
-   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
-   #0000 96%),
-  radial-gradient(50% 50% at 0 100%,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
-   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
-   #0000 96%),
-  radial-gradient(50% 50%,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
-   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
-   #0000 96%),
-  radial-gradient(50% 50%,#ae00ff 0%  5% ,#000000 6%  15%,#ae00ff 16% 25%,#000000 26% 35%,#ae00ff 36% 45%,
-   #000000 46% 55%,#ae00ff 56% 65%,#000000 66% 75%,#ae00ff 76% 85%,#000000 86% 95%,
-   #0000 96%) 50px 50px;
-background-size: 100px 100px;
-background-color: #ae00ff;
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000000 150px), repeating-linear-gradient(#ff0060, #00e5ff);
+  background-color: #000000;
 
-/* max-width: 750px; */
-margin-left: auto;
-margin-right: auto;
+  /* max-width: 750px; */
+  margin-left: auto;
+  margin-right: auto;
 
-border-radius:5px;
+  border-radius: 5px;
 }
 
 .d-frost {
-    /* https://10015.io/tools/css-background-pattern-generator */
-    background:
-    radial-gradient(50% 50% at 100% 0,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
-     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
-     #0000 96%),
-    radial-gradient(50% 50% at 0 100%,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
-     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
-     #0000 96%),
-    radial-gradient(50% 50%,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
-     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
-     #0000 96%),
-    radial-gradient(50% 50%,#63347a 0%  5% ,#000000 6%  15%,#63347a 16% 25%,#000000 26% 35%,#63347a 36% 45%,
-     #000000 46% 55%,#63347a 56% 65%,#000000 66% 75%,#63347a 76% 85%,#000000 86% 95%,
-     #0000 96%) 57px 57px;
-background-size: 114px 114px;
-background-color: #63347a;
+  /* https://10015.io/tools/css-background-pattern-generator */
+  background:
+    radial-gradient(50% 50% at 100% 0, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
+      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
+      #0000 96%),
+    radial-gradient(50% 50% at 0 100%, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
+      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
+      #0000 96%),
+    radial-gradient(50% 50%, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
+      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
+      #0000 96%),
+    radial-gradient(50% 50%, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
+      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
+      #0000 96%) 57px 57px;
+  background-size: 114px 114px;
+  background-color: #63347a;
 
-/* max-width: 750px; */
+  /* max-width: 750px; */
 
-border-radius:5px;
+  border-radius: 5px;
 
 
-  }
+}
 
-.frost {
+
+.over-frost {
   /* From https://css.glass */
-  background: linear-gradient(
-    90deg,
-    rgba(50, 2, 27, 0.515) 0%,
-    rgba(34, 26, 68, 0.451) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(89, 41, 87, 0.515) 0%,
+      rgba(42, 40, 54, 0.451) 100%);
 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(38, 33, 33, 0.5);
-  border-radius:0 0 5px 5px;
+  border: 1px solid rgba(158, 22, 65, 0.558);
+  border-radius: 5px;
 }
 
-.over-frost {
-    /* From https://css.glass */
-    background: linear-gradient(
-      90deg,
-      rgba(89, 41, 87, 0.515) 0%,
-      rgba(42, 40, 54, 0.451) 100%
-    );
-  
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(158, 22, 65, 0.558);
-    border-radius:5px;
-  }
-
 textarea {
-    width: 100%;
-    height: 80px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
+  width: 100%;
+  height: 80px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 
 #text-title {

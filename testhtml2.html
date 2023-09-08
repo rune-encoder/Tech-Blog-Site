@@ -8,20 +8,20 @@
     <!-- {{! Bootstrap CSS CDN Link }} -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
-    
+
     <!-- {{! Google Fonts }} -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-    href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
-    rel="stylesheet" />
-    
+        href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@300&family=Ysabeau+Infant:wght@300&family=Ysabeau+Office&family=Ysabeau+SC:wght@300&display=swap"
+        rel="stylesheet" />
+
     <!-- {{! Custom CSS Link }} -->
     <link rel="stylesheet" href="./public/css/style.css" />
     <title>Ultimate Tech Blog</title>
 </head>
 
-<body class="d-flex flex-column " >
+<body class="d-flex flex-column ">
     <!-- ============================================HERO AND NAV====================================== -->
     <header class="bg-hero p-4">
         <h1 class="display-3 text-start">Ultimate Tech Blog</h1>
@@ -37,35 +37,65 @@
         <p class="greeting px-5">Welcome </p>
     </div>
 
+    <!-- ============================================XXX===================================== -->
+
+
+    <div class="mx-5 my-4 p-4 frost d-flex flex-column">
+        <header class="pb-2 border-bottom border-light">
+          <a href="/blogpost/{{post.id}}">
+            <i class="fa-solid fa-2xl fa-circle-user" style="color: #c5056e;"></i>
+          </a>
+          <strong>
+            <span>
+              posted ᛒy
+            </span>
+            <a href="/blogpost/{{post.id}}">{{post.user.name}}</a>
+          </strong>
+        </header>
+    
+        <div class="mt-3">
+          <h3>
+            <a href="/blogpost/{{post.id}}">{{post.title}}</a>
+          </h3>
+          <p class="py-2">{{post.content}}</p>
+        </div>
+    
+        <footer class="pt-2 border-top border-light">
+          <time>
+            {{post.createdAt}}
+          </time>
+        </footer>
+      </div>
+
     <!-- =============================================Dashboard====================================== -->
-    
-    
+
+
     <button id="btn-post">Create</button>
     <!-- Main Background of card. -->
     <div id="dashboard-container" class="mx-5 my-4 bg-frost">
-        <div class="title d-flex justify-content-between">
+        <!-- <div class="title d-flex justify-content-between">
             <h4 class="mt-2 px-5">Your Dashboard</h4>
-        </div>
+        </div> -->
         <!-- Background Glass Overlay-->
         <div class="text-center frost d-flex flex-column align-items-center">
-            
+
             <button class="btn btn-primary w-75 my-3 d-flex justify-content-between">
                 <span class="px-5">POST 1</span>
                 <span class="px-5">DATE</span>
             </button>
-            
+
             <button class="btn btn-primary w-75 my-3 d-flex justify-content-between">
                 <span class="px-5">POST 1</span>
                 <span class="px-5">DATE</span>
             </button>
-            
+
             <button class="btn btn-primary w-75 my-3 d-flex justify-content-between">
                 <span class="px-5">POST 2</span>
                 <span class="px-5">DATE</span>
             </button>
         </div>
     </div>
-    
+
     <!-- Main Background of card. -->
     <div id="post-container" class="hide mx-5 my-4 bg-frost">
         <div class="title d-flex">
@@ -79,15 +109,15 @@
                 <form class="form create-post py-3">
                     <div class="form-group d-flex flex-column align-items-center">
                         <div class="d-flex flex-column text-start w-75">
-                            
+
                             <!-- Post Title -->
                             <label for="post-title">Title:</label>
-                            
+
                             <input class="form-input" type="text" id="post-title" />
                             <!-- Post Content -->
-                            
+
                             <label class="mt-3" for="post-content">Content:</label>
-                            
+
                             <textarea class="form-input" id="post-content"></textarea>
                             <!-- Button to Create Post -->
                             <button class="btn btn-primary mt-3" type="submit">
@@ -124,7 +154,7 @@
         </div>
     </div>
 
-    
+
     <div class="mx-5 my-2 d-frost">
         <div class="frost">
             <p class="title mt-2">Comments</p>
@@ -132,14 +162,14 @@
                 <div class="comment">
                     <div class=" p-4">
                         <p class="lead">{{comment.content}}</p>
-                    </br>
+                        </br>
                         <p>-{{comment.user.name}}, {{comment.createdAt}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- =========================================Login============================================= -->
     <!-- Main Background of card. -->
     <div class="mx-5 my-4 bg-frost">
@@ -160,7 +190,7 @@
                             <input class="form-input" type="text" id="user-login" />
                             <!-- Enter Password -->
                             <label class="mt-3" for="password-login">Password:</label>
-                            
+
                             <input class="form-input" type="password" id="password-login" />
                             <!-- Button to Login -->
                             <button class="btn btn-primary mt-3" type="submit">
@@ -173,7 +203,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- =============================================Signup=============================================== -->
     <!-- Main Background of card. -->
     <div class="mx-5 my-4 bg-frost">
@@ -194,7 +224,7 @@
                             <input class="form-input" type="text" id="name-signup" />
                             <!-- Enter Password -->
                             <label class="mt-3" for="password-signup">Password:</label>
-                            
+
                             <input class="form-input" type="password" id="password-signup" />
                             <!-- Button to Login -->
                             <button class="btn btn-primary mt-3" type="submit">
@@ -206,7 +236,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- =======================================Content Lock=============================================== -->
     <!-- Main Background of card. -->
     <div class="mx-5 my-4 bg-frost">
@@ -227,4 +257,5 @@
 <script src="./public/js/dashboard.js"></script>
 
 <script src="https://kit.fontawesome.com/809c035b81.js" crossorigin="anonymous"></script>
+
 </html>

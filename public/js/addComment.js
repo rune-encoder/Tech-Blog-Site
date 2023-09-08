@@ -1,6 +1,5 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
-  console.log("click ");
 
   // Comment Contents
   const content = document.querySelector("#comment").value.trim();
@@ -30,6 +29,7 @@ const commentFormHandler = async (event) => {
   }
 };
 
+// Submit Comment Button
 document
   .querySelector(".comment-form")
   .addEventListener("submit", commentFormHandler);

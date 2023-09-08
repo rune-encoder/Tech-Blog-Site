@@ -1,7 +1,6 @@
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log("click");
   // Collect values from the signup form
   const name = document.querySelector("#user-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
@@ -23,6 +22,7 @@ const signupFormHandler = async (event) => {
   }
 };
 
+// Click the Sign Up button
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
