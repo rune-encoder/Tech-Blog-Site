@@ -8,7 +8,7 @@
   --primary: #4b142f;
   --secondary: rgb(33, 19, 58);
   --tertiary: rgb(105, 20, 209);
-  --i-text: rgb(0, 145, 145);
+  --i-text: rgb(27, 211, 211);
   --dark: #000000;
   --medium-dark: rgb(37, 37, 37);
   --medium: #bfbfbf;
@@ -17,9 +17,7 @@
 
 body {
   background: rgb(50, 2, 27);
-  background: linear-gradient(90deg,
-      var(--primary) 0%,
-      var(--secondary) 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--light);
 }
 
@@ -43,14 +41,17 @@ a {
 p,
 time {
   color: var(--medium);
+  font-size: 110%;
 }
 
 /* Glass background effect for posts */
 .frost {
   /* From https://css.glass */
-  background: linear-gradient(90deg,
-      rgba(8, 0, 4, 0.822) 0%,
-      rgba(0, 0, 0, 0.363) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(8, 0, 4, 0.822) 0%,
+    rgba(0, 0, 0, 0.363) 100%
+  );
 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
@@ -77,6 +78,7 @@ time {
   border-radius: 15px;
 }
 
+/* Stying for the sign-in or sign-up forms */
 .card-signin {
   color: var(--dark);
   background-color: var(--light);
@@ -85,6 +87,49 @@ time {
 
 .card-signin a {
   color: var(--i-text);
+}
+
+/* Custom Buttons for Dashboard */
+.custom-btn {
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: var(--light);
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  outline: 0.1px solid;
+  background-color: var(--dark);
+}
+
+.custom-btn:hover {
+  background: #d4ddee;
+  background: linear-gradient(to right, #c9d7eb, #d4ddee);
+  opacity: 100%;
+  border: 0.5px solid #3f4c6b;
+  outline-color: #606c88;
+  outline-style: initial;
+  outline-offset: 10px;
+  outline-width: 10px;
+  color: var(--medium-dark);
+}
+
+.custom-btn:active {
+  background: #464e63;
+  background: linear-gradient(to right, #506188, #626e8a);
+  opacity: 85%;
+  color: #ffffff;
+}
+
+/* Small Icon Styles */
+.custom-icon:hover {
+  color: var(--i-text);
+}
+
+.custom-icon:active {
+  color: var(--medium-dark);
 }
 
 /* --------------------------------------------------------------------------------- */
@@ -126,56 +171,6 @@ nav a:hover {
   text-shadow: 2px 2px 2px var(--dark);
 }
 
-.bg-home-frost {
-  /* https://10015.io/tools/css-background-pattern-generator */
-  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000000 150px), repeating-linear-gradient(#ff0060, #00e5ff);
-  background-color: #000000;
-
-  /* max-width: 750px; */
-  margin-left: auto;
-  margin-right: auto;
-
-  border-radius: 5px;
-}
-
-.d-frost {
-  /* https://10015.io/tools/css-background-pattern-generator */
-  background:
-    radial-gradient(50% 50% at 100% 0, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
-      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
-      #0000 96%),
-    radial-gradient(50% 50% at 0 100%, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
-      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
-      #0000 96%),
-    radial-gradient(50% 50%, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
-      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
-      #0000 96%),
-    radial-gradient(50% 50%, #63347a 0% 5%, #000000 6% 15%, #63347a 16% 25%, #000000 26% 35%, #63347a 36% 45%,
-      #000000 46% 55%, #63347a 56% 65%, #000000 66% 75%, #63347a 76% 85%, #000000 86% 95%,
-      #0000 96%) 57px 57px;
-  background-size: 114px 114px;
-  background-color: #63347a;
-
-  /* max-width: 750px; */
-
-  border-radius: 5px;
-
-
-}
-
-
-.over-frost {
-  /* From https://css.glass */
-  background: linear-gradient(90deg,
-      rgba(89, 41, 87, 0.515) 0%,
-      rgba(42, 40, 54, 0.451) 100%);
-
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(158, 22, 65, 0.558);
-  border-radius: 5px;
-}
 
 textarea {
   width: 100%;

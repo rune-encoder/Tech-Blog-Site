@@ -51,6 +51,15 @@ router.get("/blogpost/:id", async (req, res) => {
   }
 });
 
+// REDIRECT: Display message you need to be logged in.
+router.get("/dashboard", async (req, res) => {
+  try {
+    res.render("redirect");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // DASHBOARD: Display all of user's blog posts on the user's dashboard.
 router.get("/dashboard/:user", async (req, res) => {
   try {

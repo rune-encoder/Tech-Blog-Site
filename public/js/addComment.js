@@ -1,3 +1,14 @@
+const addComment = document.querySelector('#add-comment');
+
+// Toggle Comment Bubble
+const toggleCommentForm = async () => {
+  if (addComment.classList.contains("hide")) {
+    addComment.classList.remove("hide");
+  } else {
+    addComment.classList.add("hide");
+  }
+};
+
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
@@ -33,3 +44,8 @@ const commentFormHandler = async (event) => {
 document
   .querySelector(".comment-form")
   .addEventListener("submit", commentFormHandler);
+
+// Toggle Comment Bubble
+document
+  .querySelector("#btn-post")
+  .addEventListener("click", toggleCommentForm);
