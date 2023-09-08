@@ -11,9 +11,12 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 // Import dotenv environment variables.
 require("dotenv").config();
 
+// Import the custom helper methods
+const helpers = require("./utils/helpers");
+
 // Import express-handlebars
 const exphbs = require("express-handlebars");
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 
 // Import the routes.
 const routes = require("./controllers");
