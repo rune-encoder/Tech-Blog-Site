@@ -21,7 +21,8 @@
 
     <footer class="pt-3 border-top border-light d-flex justify-content-between">
       <time>
-        {{ format_date post.createdAt }}
+        {{format_date post.createdAt}} 
+        {{format_time post.createdAt}}
       </time>
       <strong>
         <button id="btn-post" class="btn-clear custom-icon"><i
@@ -69,7 +70,8 @@
 
       <footer class="pt-3 border-top border-light">
         <time>
-          {{comment.createdAt}}
+          {{format_date comment.createdAt}} 
+          {{format_time comment.createdAt}}
         </time>
       </footer>
     </div>
