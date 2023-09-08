@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
     res.render("homepage", {
       posts,
       logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
       user_name: req.session.user_name,
     });
   } catch (err) {
@@ -64,6 +65,7 @@ router.get("/dashboard/:user", async (req, res) => {
     res.render("dashboard", {
       posts,
       logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
       user_name: req.session.user_name,
     });
   } catch (err) {
