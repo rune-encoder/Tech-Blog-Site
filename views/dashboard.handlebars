@@ -1,19 +1,102 @@
-<!-- Main Background of card. -->
-<div class="mx-5 my-4 bg-frost">
+<button id="btn-post">Create</button>
+
+<!-- DASHBOARD: Main Background of card. -->
+<div id="dashboard-container" class="mx-5 my-4 bg-frost">
     <div class="title d-flex">
         <h4 class="mt-2 px-5">{{user_name}}'s' Dashboard</h4>
     </div>
+
     <!-- Background Glass Overlay-->
-    <div class="text-center frost d-flex flex-column align-items-center">
+    <div id="dash-posts" class="text-center frost d-flex flex-column align-items-center">
 
         {{#each posts as |post| }}
-        <button id="{{post.id}}" class="btn btn-primary w-75 my-3 d-flex justify-content-between">
-            <span class="px-5">{{post.title}}</span>
-            <span class="px-5">{{post.createdAt}}</span>
+        <button data-id="{{post.id}}" data-title="{{post.title}}" data-content="{{post.content}}" class="select-post btn btn-primary w-75 my-3 d-flex justify-content-between">
+            {{post.title}} {{post.createdAt}} 
         </button>
         {{/each}}
     </div>
 </div>
+
+{{!-- CREATE POST: Main Background of card --}}
+<div id="post-container" class="hide mx-5 my-4 bg-frost">
+    <div class="title d-flex">
+        <h4 class="mt-2 px-5">Create New Post</h4>
+    </div>
+
+    {{!-- Background Glass Overlay--}}
+    <div class="text-center frost d-flex justify-content-center">
+
+        {{!-- Overhead Glass Overlay --}}
+        <div class="m-5 p-4 over-frost w-75">
+
+            {{!-- FORM: Create New Post --}}
+            <form id="submit-post" class="py-3">
+                <div class="form-group d-flex flex-column align-items-center">
+                    <div class="d-flex flex-column text-start w-75">
+
+                        {{!-- Post Title --}}
+                        <label for="post-title">Title:</label>
+                        <input type="text" id="post-title" />
+
+                        {{!-- Post Content --}}
+                        <label class="mt-3" for="post-content">Content:</label>
+                        <textarea id="post-content"></textarea>
+
+                        {{!-- Button to Create Post --}}
+                        <button class="btn btn-primary mt-3" type="submit">
+                            Create
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{!-- FORM: Update and Delete Post --}}
+<div id="modify-container" class="hide mx-5 my-4 bg-frost">
+    <div class="title d-flex">
+        <h4 class="mt-2 px-5">Edit Post</h4>
+    </div>
+
+    {{!-- Background Glass Overlay--}}
+    <div class="text-center frost d-flex justify-content-center">
+
+        {{!-- Overhead Glass Overlay --}}
+        <div class="m-5 p-4 over-frost w-75">
+
+            {{!-- FORM: Create New Post --}}
+            <form id="modify-post" class="py-3">
+                <div class="form-group d-flex flex-column align-items-center">
+                    <div class="d-flex flex-column text-start w-75">
+
+                        {{!-- Post Title --}}
+                        <label for="mod-title">Title:</label>
+                        <input type="text" id="mod-title" />
+
+                        {{!-- Post Content --}}
+                        <label class="mt-3" for="mod-content">Content:</label>
+                        <textarea id="mod-content"></textarea>
+
+                        {{!-- Button to Create Post --}}
+                        <button id="update-post" class="btn btn-primary mt-3">
+                            Update Post
+                        </button>
+
+                        {{!-- Button to Create Post --}}
+                        <button id="delete-post" class="btn btn-primary mt-3">
+                            Delete
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/dashboard.js"></script>
 
 {{!-- {{post.id}}
 {{post.title}}

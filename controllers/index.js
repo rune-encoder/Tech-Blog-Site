@@ -9,6 +9,6 @@ router.use('/', homeRoutes);
 // Send all the requests that begin with /api to the index.js in the api folder.
 router.use('/api', apiRoutes);
 
-// *** WILL ADD WILDCARD ROUTE LATER ===================================================*
+// *** WILL ADD WILDCARD ROUTE LATER ***
 
 module.exports = router;
