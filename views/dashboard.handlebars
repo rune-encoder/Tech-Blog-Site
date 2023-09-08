@@ -1,58 +1,78 @@
-<button id="btn-post">Create</button>
+{{!-- DASHBOARD: Main Background of card. --}}
+<div id="dashboard-container">
+    <div class="mx-5 my-4 p-4 frost d-flex flex-column">
+        <header class="pb-2 border-bottom border-light">
+            <h3>
+                <i class="fa-solid fa-2xl fa-circle-user" style="color: #c5056e;"></i>
+                <span>{{user_name}}'s Dashboard</span>
+            </h3>
+        </header>
 
-<!-- DASHBOARD: Main Background of card. -->
-<div id="dashboard-container" class="mx-5 my-4 bg-frost">
-    <div class="title d-flex">
-        <h4 class="mt-2 px-5">{{user_name}}'s' Dashboard</h4>
-    </div>
+        <article id="dash-posts">
+            {{#each posts as |post| }}
+            <button data-id="{{post.id}}" data-title="{{post.title}}" data-content="{{post.content}}"
+                class="select-post btn bg-light w-75 my-3 d-flex justify-content-between">
+                {{post.title}} {{post.createdAt}}
+            </button>
+            {{/each}}
+        </article>
 
-    <!-- Background Glass Overlay-->
-    <div id="dash-posts" class="text-center frost d-flex flex-column align-items-center">
-
-        {{#each posts as |post| }}
-        <button data-id="{{post.id}}" data-title="{{post.title}}" data-content="{{post.content}}" class="select-post btn btn-primary w-75 my-3 d-flex justify-content-between">
-            {{post.title}} {{post.createdAt}} 
-        </button>
-        {{/each}}
+        <footer class="pt-3 border-top border-light">
+            <strong>
+                <button id="btn-post" class="btn-clear"><i class="fa-solid fa-circle-plus fa-2xl"
+                        style="color: #225dc3;"></i></i>Create New Post</button>
+            </strong>
+        </footer>
     </div>
 </div>
 
-{{!-- CREATE POST: Main Background of card --}}
-<div id="post-container" class="hide mx-5 my-4 bg-frost">
-    <div class="title d-flex">
-        <h4 class="mt-2 px-5">Create New Post</h4>
-    </div>
+{{!-- CREATE NEW POST --}}
+<div id="post-container" class="hide">
+    <div class="my-5 d-flex justify-content-center">
+        <div class="frost w-75 d-flex justify-content-center">
+            <div class="m-5 p-4 w-75 bg-blogpost">
 
-    {{!-- Background Glass Overlay--}}
-    <div class="text-center frost d-flex justify-content-center">
+                {{!-- FORM: Create New Post --}}
+                <form id="submit-post" class="py-3">
+                    <div class="form-group d-flex flex-column align-items-center">
+                        <div class="d-flex flex-column text-start w-75">
+                            <header class="pb-2 border-bottom border-light">
+                                <h3>
+                                    <i class="fa-brands fa-microblog fa-xl" style="color: #195dd2;"></i>
+                                    <span class="px-3">Create New Post</span>
+                                </h3>
+                            </header>
 
-        {{!-- Overhead Glass Overlay --}}
-        <div class="m-5 p-4 over-frost w-75">
+                            {{!-- Post Title --}}
+                            <label class="mt-2" for="post-title">Title:</label>
+                            <input type="text" id="post-title" />
 
-            {{!-- FORM: Create New Post --}}
-            <form id="submit-post" class="py-3">
-                <div class="form-group d-flex flex-column align-items-center">
-                    <div class="d-flex flex-column text-start w-75">
+                            {{!-- Post Content --}}
+                            <label class="mt-3" for="post-content">Content:</label>
+                            <textarea id="post-content"></textarea>
 
-                        {{!-- Post Title --}}
-                        <label for="post-title">Title:</label>
-                        <input type="text" id="post-title" />
+                            {{!-- Button to Create Post --}}
+                            <button class="btn btn-primary mt-3" type="submit">
+                                Create
+                            </button>
 
-                        {{!-- Post Content --}}
-                        <label class="mt-3" for="post-content">Content:</label>
-                        <textarea id="post-content"></textarea>
+                            <footer class="mt-4 pt-3 border-top border-light">
+                                <strong>
+                                    <button id="create-return" class="btn-clear"><i
+                                            class="fa-solid fa-circle-arrow-left"
+                                            style="color: #3c73d3;"></i>Return</button>
+                                </strong>
+                            </footer>
 
-                        {{!-- Button to Create Post --}}
-                        <button class="btn btn-primary mt-3" type="submit">
-                            Create
-                        </button>
-
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
+{{!-- ========================================================================== --}}
 
 {{!-- FORM: Update and Delete Post --}}
 <div id="modify-container" class="hide mx-5 my-4 bg-frost">

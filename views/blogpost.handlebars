@@ -1,67 +1,92 @@
 {{#if logged_in}}
-<div class="mx-5 my-4 bg-frost">
-    <div class="title d-flex justify-content-between">
-        <h4 class="mt-2 px-5">{{post.title}}</h4>
-        <p class="mt-2 px-5">Posted by {{post.user.name}}</p>
-    </div>
-    <div class="frost">
-        <div class="m-5 p-4 over-frost">
-            <p>{{post.content}}</p>
-        </div>
-        <div class="m-5 p-4 over-frost comments">
-            <form class="comment-form">
-                <textarea id="comment" data-user="{{user_id}}" placeholder="Write a comment..."></textarea>
-                <button class="btn btn-primary mt-3" type="submit">
-                    Submit
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+  {{! Main Blog Post }}
+  <div class="mx-5 my-4 p-4 bg-blogpost d-flex flex-column">
+    <header class="pb-2 border-bottom border-light">
+      <h3>{{post.title}}</h3>
+    </header>
 
-<div class="mx-5 my-2 d-frost">
-    <div class="frost">
-        <p class="title mt-2">Comments</p>
-        {{#each post.comments as |comment| }}
-
-        <div class=" mx-5 over-frost my-5">
-            <div class="comment">
-                <div class=" p-4">
-                    <p class="lead">{{comment.content}}</p>
-                    </br>
-                    <p>-{{comment.user.name}}, {{comment.createdAt}}</p>
-                </div>
-            </div>
-        </div>
-        {{/each}}
+    <div class="mt-3">
+      <i class="fa-solid fa-2xl fa-circle-user" style="color: #c5056e;"></i>
+      <strong>
+        <span>
+          ᛒy
+          {{post.user.name}}
+        </span>
+      </strong>
     </div>
-</div>
 
-<script src="/js/addComment.js"></script>
+    <article>
+      <p class="py-3">{{post.content}}</p>
+    </article>
+
+    <footer class="pt-3 border-top border-light">
+      <time>
+        {{post.createdAt}}
+      </time>
+      <button class="btn-clear mx-5">
+        <i class="fa-solid fa-2xl fa-comment" style="color: #ffffff;"></i>
+      </button>
+    </footer>
+  </div>
+
+  {{! Write a comment section }}
+  <div class="m-5 p-4 over-frost comments">
+    <form class="comment-form">
+      <textarea
+        id="comment"
+        data-user="{{user_id}}"
+        placeholder="Write a comment..."
+      ></textarea>
+      <button class="btn btn-primary mt-3" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <strong class="m-4 p-4">
+    <span>COMMENTS:</span>
+    <i class="px-2 fa-solid fa-xl fa-comments" style="color: #ffffff;"></i>
+  </strong>
+
+  {{! Render all comments for post section }}
+  {{#each post.comments as |comment|}}
+    <div class="mx-5 my-4 p-4 bg-blogpost d-flex flex-column">
+      <header class="mt-3">
+        <i class="fa-solid fa-2xl fa-circle-user" style="color: #ffffff;"></i>
+        <strong>
+          <span>
+            {{comment.user.name}}
+          </span>
+        </strong>
+      </header>
+
+      <article>
+        <p class="py-3">{{comment.content}}</p>
+      </article>
+
+      <footer class="pt-3 border-top border-light">
+        <time>
+          {{comment.createdAt}}
+        </time>
+      </footer>
+    </div>
+  {{/each}}
+
+  <script src="/js/addComment.js"></script>
 
 {{else}}
-<!-- Main Background of card. -->
-<div class="mx-5 my-4 bg-frost">
+  <!-- Main Background of card. -->
+  <div class="mx-5 my-4 bg-frost">
     <!-- Card Header -->
     <div class="title d-flex">
-        <h4 class="mt-2 px-5">Content Locked</h4>
+      <h4 class="mt-2 px-5">Content Locked</h4>
     </div>
     <!-- Background Glass Overlay-->
     <div class="text-center frost">
-        <!-- Overhead Glass Overlay -->
-        <div class="m-5 p-4 over-frost">
-            <h3>Must be logged in to view content</h3>
-        </div>
+      <!-- Overhead Glass Overlay -->
+      <div class="m-5 p-4 over-frost">
+        <h3>Must be logged in to view content</h3>
+      </div>
     </div>
-</div>
+  </div>
 {{/if}}
-
-{{!-- {{comment.content}} --}}
-{{!-- {{comment.createdAt}} --}}
-{{!-- {{comment.user.name}} --}}
-
-{{!-- {{post.id}} --}}
-{{!-- {{post.title}} --}}
-{{!-- {{post.content}} --}}
-{{!-- {{post.user.name}} --}}
-{{!-- {{post.createdAt}} --}}

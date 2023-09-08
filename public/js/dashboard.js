@@ -18,6 +18,7 @@ const modPost = document.querySelector("#modify-post");
 
 // TOGGLE: Toggles the Dashboard and the Create Blog Post form
 const togglePostForm = async () => {
+  console.log('click')
   if (postContainer.classList.contains("hide")) {
     postContainer.classList.remove("hide");
     dashboardContainer.classList.add("hide");
@@ -128,6 +129,7 @@ const deleteFormHandler = async (event) => {
 
 // Toggle Dashboard and Create Post screen.
 document.querySelector("#btn-post").addEventListener("click", togglePostForm);
+document.querySelector("#create-return").addEventListener("click", togglePostForm);
 
 // Toggle Edit Post screen.
 document.querySelector("#dash-posts").addEventListener("click", (event) => {

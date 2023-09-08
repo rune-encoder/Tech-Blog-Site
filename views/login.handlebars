@@ -1,35 +1,36 @@
-<!-- Main Background of card. -->
-<div class="mx-5 my-4 bg-frost">
-    <!-- Card Header -->
-    <div class="title d-flex">
-        <h4 class="mt-2 px-5">Login</h4>
-    </div>
-    <!-- Background Glass Overlay-->
-    <div class="text-center frost">
-        <!-- Overhead Glass Overlay -->
-        <div class="m-5 p-4 over-frost">
-            <!-- Login Form  -->
-            <form class="form login-form py-3">
-                <div class="form-group d-flex flex-column align-items-center">
-                    <div class="d-flex flex-column text-start w-50">
-                        <!-- Enter Username -->
-                        <label for="user-login">Username:</label>
-                        <input class="form-input" type="text" id="user-login" />
-                        <!-- Enter Password -->
-                        <label class="mt-3" for="password-login">Password:</label>
+<div class="my-5 d-flex justify-content-center">
+  {{! Form Background }}
+  <div class="m-5 p-4 w-75 card-signin">
+    {{! Login Form }}
+    <form class="login-form py-3">
+      <div class="form-group d-flex flex-column align-items-center">
+        <div class="d-flex flex-column text-start w-50">
+          <h3 class="pb-2 border-bottom border-dark">
+            <i class="fa-solid fa-users" style="color: #1c4997;"></i>
+            <span class="px-3">Account Login</span>
+          </h3>
 
-                        <input class="form-input" type="password" id="password-login" />
-                        <!-- Button to Login -->
-                        <button class="btn btn-primary mt-3" type="submit">
-                            Login
-                        </button>
-                        {{!-- Link to Sign-in page --}}
-                        <a class="mt-2" href="../signup">Sign up instead!</a>
-                    </div>
-                </div>
-            </form>
+          {{! Enter Username }}
+          <label for="user-login">Username:</label>
+          <input class="form-input" type="text" id="user-login" />
+
+          {{! Enter Password }}
+          <label class="mt-3" for="password-login">Password:</label>
+          <input class="form-input" type="password" id="password-login" />
+
+          {{! Button to Login }}
+          <button class="btn btn-primary mt-3" type="submit">
+            SIGN IN
+          </button>
+
+          {{! Link to Sign-in page }}
+          <strong class="mt-2">
+            <a href="../signup">Sign up instead!</a>
+          </strong>
         </div>
-    </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="/js/login.js"></script>

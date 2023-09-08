@@ -1,21 +1,30 @@
 {{#each posts as |post|}}
+  {{! All blog posts will render }}
+  <div class="mx-5 my-4 p-4 frost d-flex flex-column">
+    <header class="pb-2 border-bottom border-light">
+      <a href="/blogpost/{{post.id}}">
+        <i class="fa-solid fa-2xl fa-circle-user" style="color: #c5056e;"></i>
+      </a>
+      <strong>
+        <span>
+          posted ᛒy
+        </span>
+        <a href="/blogpost/{{post.id}}">{{post.user.name}}</a>
+      </strong>
+    </header>
 
-<div class="mx-5 my-4 bg-frost">
-  <div class="title d-flex justify-content-between">
-    <a href="/blogpost/{{post.id}}" >{{post.title}}</a>
-    <p class="mt-2 px-5">Posted by {{post.user.name}}</p>
-  </div>
-  <div class="frost">
-    <div class="m-5 p-4 over-frost">
-      <p>{{post.content}}</p>
+    <div class="mt-3">
+      <h3>
+        <a href="/blogpost/{{post.id}}">{{post.title}}</a>
+      </h3>
+      <p class="py-2">{{post.content}}</p>
     </div>
+
+    <footer class="pt-2 border-top border-light">
+      <time>
+        {{post.createdAt}}
+      </time>
+    </footer>
   </div>
-</div>
 
 {{/each}}
-
-{{!-- {{post.id}}
-{{post.title}}
-{{post.content}}
-{{post.user.name}}
-{{post.createdAt}} --}}

@@ -1,32 +1,33 @@
-<!-- Main Background of card. -->
-<div class="mx-5 my-4 bg-frost">
-    <div class="title d-flex">
-        <h4 class="mt-2 px-5">Signup</h4>
-    </div>
-    <!-- Background Glass Overlay-->
-    <div class="text-center frost">
-        <!-- Overhead Glass Overlay -->
-        <div class="m-5 p-4 over-frost">
-            <!-- Login Form  -->
-            <form class="form signup-form py-3">
-                <div class="form-group d-flex flex-column align-items-center">
-                    <div class="d-flex flex-column text-start w-50">
-                        <!-- Enter Username -->
-                        <label for="user-signup">Username:</label>
-                        <input class="form-input" type="text" id="user-signup" />
-                        <!-- Enter Password -->
-                        <label class="mt-3" for="password-signup">Password:</label>
+<div class="my-5 d-flex justify-content-center">
+  {{! Form Background }}
+  <div class="m-5 p-4 w-75 card-signin">
+    {{! Login Form }}
+    <form class="signup-form py-3">
+      <div class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-column text-start w-50">
+          <header class="pb-2 border-bottom border-dark">
+            <h3>
+              <i class="fa-solid fa-user-plus" style="color: #1660df;"></i>
+              <span class="px-3">Sign Up</span>
+            </h3>
+          </header>
 
-                        <input class="form-input" type="password" id="password-signup" />
-                        <!-- Button to Login -->
-                        <button class="btn btn-primary mt-3" type="submit">
-                            Signup
-                        </button>
-                    </div>
-                </div>
-            </form>
+          <!-- Enter Username -->
+          <label for="user-signup">Username:</label>
+          <input type="text" id="user-signup" />
+
+          <!-- Enter Password -->
+          <label class="mt-3" for="password-signup">Password:</label>
+          <input type="password" id="password-signup" />
+
+          <!-- Button to Login -->
+          <button class="btn btn-primary mt-3" type="submit">
+            Signup
+          </button>
         </div>
-    </div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="/js/signup.js"></script>
