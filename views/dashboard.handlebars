@@ -143,46 +143,6 @@
 {{else}}
 
   {{! PLEASE LOG IN TO VIEW CONTENT}}
-  <div class="my-5 d-flex justify-content-center">
-    <div class="frost w-75 d-flex justify-content-center">
-      <div class="m-5 p-4 w-75 bg-blogpost">
-        <div class="d-flex flex-column align-items-center">
-          <div class="d-flex flex-column text-start w-75">
-            <header class="pb-2 border-bottom border-light">
-              <h3>
-                <i
-                  class="fa-solid fa-triangle-exclamation fa-xl"
-                  style="color: #ffffff;"
-                ></i>
-                <span class="px-3">Please Login</span>
-              </h3>
-            </header>
-
-            <p>You must be logged in to view content...</p>
-
-            {{! Link to Login page }}
-            <a href="/login" class="custom-btn mt-3">
-              Sign In
-            </a>
-
-            {{! Link to Sign Up Page }}
-            <a href="/signup" class="custom-btn mt-3">
-              Sign Up
-            </a>
-
-            {{! Link to Homepage }}
-            <footer class="mt-4 pt-3 border-top border-light">
-              <strong>
-                <a href="/" class="btn-clear custom-icon"><i
-                    class="fa-solid fa-xl fa-circle-arrow-left"
-                    style="color: #bfbfbf;"
-                  ></i>Return</a>
-              </strong>
-            </footer>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+{{> please-login}}
 
 {{/if}}
