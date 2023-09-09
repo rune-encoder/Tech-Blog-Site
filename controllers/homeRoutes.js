@@ -6,8 +6,8 @@ const { User, Post, Comment } = require("../models");
 // HOME: Display all blog posts on homepage.
 router.get("/", async (req, res) => {
   try {
-    console.log(req.session.user_name);
     const postData = await Post.findAll({
+      order: [["createdAt", "DESC"]],
       include: [{ model: User, attributes: ["name"] }],
     });
 
