@@ -5,6 +5,16 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector("#user-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
+  if (!name || !password) {
+    alert("Form must not be empty");
+    return;
+  }
+
+  if (password.length < 10) {
+    alert('Password must be at least 10 characters.')
+    return
+  }
+
   // Send a POST request to the API endpoint
   if (name && password) {
     const response = await fetch("/api/users", {

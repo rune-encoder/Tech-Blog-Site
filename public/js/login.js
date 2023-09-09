@@ -5,6 +5,11 @@ const loginFormHandler = async (event) => {
   const name = document.querySelector("#user-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
+  if (!name || !password) {
+    alert("Form must not be empty");
+    return;
+  }
+
   if (name && password) {
     // Send a POST request to the API endpoint
     const response = await fetch("/api/users/login", {
@@ -17,7 +22,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the dashboard page
       document.location.replace(`/`);
     } else {
-      alert(response.statusText);
+      alert(response);
     }
   }
 };
