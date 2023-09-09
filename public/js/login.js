@@ -22,7 +22,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the dashboard page
       document.location.replace(`/`);
     } else {
-      alert(response);
+      alert(response.statusText);
     }
   }
 };
