@@ -14,7 +14,7 @@
 
 ## Description
 
-**Ultimate Tech Blog Deployed Application: [Ultimate Tech Blog]()**
+**Ultimate Tech Blog Deployed Application: [Ultimate Tech Blog](https://u-tech-blog-84c6469a8f10.herokuapp.com/)**
 
 Create an account with us at Ultimate Tech Blog to contribute to the developer community.  
 This is a tech blogpost site where developers can publish their blog posts and comment on other developers’ posts.  
